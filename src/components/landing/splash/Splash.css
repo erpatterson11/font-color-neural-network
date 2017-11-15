@@ -1,0 +1,18 @@
+.splash-container {
+    width: 100vw;
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.splash-header-text {
+    font-family: var(--Inconsolata);
+    font-size: 72px;
+    max-width: 60%;
+}
+
+

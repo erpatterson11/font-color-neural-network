@@ -1,0 +1,10 @@
+input[type="color"] {
+    border: none;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+}
+
+

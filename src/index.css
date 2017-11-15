@@ -1,0 +1,18 @@
+:root {
+  --black: #000000;
+  --dark-grey: #494949;
+  --light-grey: #BFBFBF;
+  --white: #FFFFFF;
+  --Roboto: 'Roboto', sans-serif;
+  --Montserrat: 'Montserrat', sans-serif;
+  --Raleway: 'Raleway', sans-serif;
+  --Ubuntu: 'Ubuntu', sans-serif;
+  --Inconsolata: 'Inconsolata', monospace;
+  --border: solid 2px #FFFFFF;  
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
