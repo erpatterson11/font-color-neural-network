@@ -1,0 +1,10 @@
+.sat-light-picker-widget {
+    width: 300px;
+    height: 300px;
+    box-shadow: 5px 5px 15px 35px black;
+}
+
+.lightness-picker {
+    width: 300px;
+    height: 300px;
+}

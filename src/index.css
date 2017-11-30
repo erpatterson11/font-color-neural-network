@@ -1,8 +1,9 @@
 :root {
   --black: #000000;
-  --dark-grey: #494949;
+  --dark-grey: linear-gradient(#000000,#222222);
   --light-grey: #BFBFBF;
   --white: #FFFFFF;
+  --neon-green: #83F52C;
   --Roboto: 'Roboto', sans-serif;
   --Montserrat: 'Montserrat', sans-serif;
   --Raleway: 'Raleway', sans-serif;

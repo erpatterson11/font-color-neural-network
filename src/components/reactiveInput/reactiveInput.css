@@ -1,0 +1,30 @@
+.reactive-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reactive-input-val-icon {
+    color: var(--white);
+}
+
+.reactive-input {
+    margin: 80px;
+    padding: 10px 5px 2px 5px;
+    color: var(--light-grey);
+    background: none;
+    border: none;
+    border-bottom: 2px solid var(--light-grey);
+    transition: 0.33s ease-in-out;
+}
+
+.reactive-input:focus {
+    border-bottom: 2px solid var(--white);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+  
+.reactive-input:valid {
+    border-bottom: 2px solid var(--neon-green);
+}

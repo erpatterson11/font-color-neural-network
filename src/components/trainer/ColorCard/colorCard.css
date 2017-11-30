@@ -1,0 +1,25 @@
+.color-card {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-family: sans-serif;
+    cursor: pointer;
+    transition: 0.15s;
+    outline: none;
+}
+
+.color-card:hover {
+    transform: scale(1.05)
+}
+
+@keyframes slide-out {
+    50% {
+        transform: translateY(150%)
+    }
+    51% {
+        transform: translateY(-150%)
+    }
+}

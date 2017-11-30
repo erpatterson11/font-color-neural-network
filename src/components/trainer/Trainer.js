@@ -1,57 +1,56 @@
 import React, { Component } from 'react'
 
-// MODULES
-
 // COMPONENTS
-
-// REDUX
-// import { connect } from 'react-redux'
+import ColorCard from './ColorCard/ColorCard'
 
 // OTHER
+import axios from 'axios'
+import { generateRandomColor, formatHSL } from './../../services/colorService'
 
 // CSS
-import './Trainer.css'
+import './trainer.css'
+
 
 class Trainer extends Component {
 
     // LIFECYCLE FUNCS
-    constructor(props) { // define state and biind methods
-        super(props) // defines props in constructor, reduces bugs
-        this.state = {}
-        // BIND CUSTOM FUNCS
-        // ( (comp, funcsList) => {
-        //     funcsList.forEach( func => comp.func = func.bind(comp) )
-        // } )(this, [])
+    constructor(props) { 
+        super(props)
+        this.state = {
+            bgColor: generateRandomColor(),
+            black: "#000000",
+            white: "#FFFFFF"          
+        }
+
+        this.handleClick = this.handleClick.bind(this)
     }
 
-    // componentWillMount() {} // is run before mounting. setState won't trigger re-render. avoid side-effects or subscriptions
-    // componentDidMount() {} // is run after mounting. target DOM nodes here. load async data here. 
-    // componentWillReceiveProps(nextProps) {} // is run before props changed or parent triggers rerender. use to setState. may run when new props aren't received.
-    // shouldComponentUpdate(nextProps, nextState) {} // is run before props or state change triggers rerender. return false to stop component rerender 
-    // componentWillUpdate(nextProps, nextState) {} // is run after new props or state are received and comp will rerender. can't call setState
-    // componentDidUpdate() {} // is run after initial rerender. operate on DOM. make network requests if state or props changed
-    // componentWillUnmount() {} // is run after component unmounts. cancel timers, event listeners, network requests, destroy manually created DOM elements, etc...
-
     // CUSTOM FUNCS
+    handleClick(fontColor) {
+        const trainingData = Object.assign({}, this.state.bgColor, {black: fontColor === this.state.black})
+        axios.post('http://localhost:3005/api/color', trainingData)
+        this.setState({
+            bgColor: generateRandomColor()
+        })
+    }
 
     // RENDER
     render() {
+
+        const { bgColor, white, black } = this.state
+
+        const formatedColor = formatHSL(bgColor)
+
         return (
-            <div></div>
+            <div className="network-trainer-container">
+                <ColorCard bgColor={formatedColor} text={white} option="1" handleClick={() => this.handleClick(white)} />
+                <ColorCard bgColor={formatedColor} text={black} option="2" handleClick={() => this.handleClick(black)} />
+            </div>
         )
     }
 }
 
-// REDUX
-
-function mapStateToProps(state) {
-    return state
-}
 
 // EXPORT
 
 export default Trainer
-
-// REDUX EXPORT
-
-// export default connect( mapStateToProps, mapActionsToProps )(Trainer)

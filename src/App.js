@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route path="train" component={Trainer}/>
+          <Route path="/train" component={Trainer}/>
           <Route exact path="/" component={Landing} />
         </Switch>
       </div>

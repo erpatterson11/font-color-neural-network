@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.17.0",
     "body-parser": "^1.18.2",
+    "concurrently": "^3.5.1",
     "cors": "^2.8.4",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
@@ -18,7 +19,7 @@
     "react-scripts": "1.0.17"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently --kill-others \"nodemon server/index.js\" \"react-scripts start\"",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
